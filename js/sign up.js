@@ -16,5 +16,11 @@ icon.setAttribute("data-feather","eye");
 }
 
 feather.replace();
+document.getElementById("registerForm").addEventListener("submit", function(e){
 
+e.preventDefault();
+
+window.location.href = "/html/home.html";
+
+});
 }

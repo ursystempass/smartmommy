@@ -1,123 +1,527 @@
-/* TAB FILTER */
+/* ================= GLOBAL ================= */
 
-.tab-filter {
-    background: white;
-    padding: 8px;
-    border-radius: 25px;
-    display: inline-flex;
-    gap: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.tab {
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-}
-
-.tab.active {
-    background: #f0e9ff;
+body{
+font-family:'Poppins',sans-serif;
+margin:0;
+color:#333;
 }
 
 
-/* REMINDER ITEM */
 
-.reminder-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+/* ================= NAVBAR ================= */
+
+.navbar{
+display:flex;
+align-items:center;
+padding:20px 40px;
 }
 
-.time {
-    font-size: 12px;
-    color: #555;
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:600;
+letter-spacing:1px;
 }
 
-.reminder-info h4 {
-    font-weight: 600;
-}
-
-.reminder-info p {
-    font-size: 13px;
-    color: #666;
+.logo img{
+width:34px;
 }
 
 
-/* DONE BUTTON */
 
-.btn-done {
-    background: #cfd8ff;
-    padding: 6px 18px;
-    border-radius: 20px;
-    font-size: 13px;
+/* ================= LAYOUT ================= */
+
+.layout{
+display:flex;
 }
 
 
-/* FUTURE */
 
-.future-card {
-    background: white;
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+
+width:110px;
+height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+align-items:center;
+
+padding:40px 0;
 }
 
 
-/* TIPS */
-
-.tips-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.tips-card img {
-    width: 80px;
+.menu{
+display:flex;
+flex-direction:column;
+gap:40px;
 }
 
 
-/* WEEKLY */
-
-.weekly-card {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+.menu-item img{
+width:32px;
+transition:0.3s;
+cursor:pointer;
 }
 
-.days {
-    display: flex;
-    gap: 6px;
+
+.menu-item img:hover{
+transform:scale(1.15);
 }
 
-.day {
-    background: #eee;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 12px;
+
+/* active icon */
+
+.menu-item.active img{
+filter:brightness(0) saturate(100%) invert(45%) sepia(70%) saturate(500%) hue-rotate(210deg);
 }
 
-.day.active {
-    background: #ffc8d8;
+
+.profile img{
+width:36px;
 }
 
-.day.blue {
-    background: #a6c8ff;
+
+
+/* ================= CONTENT ================= */
+
+.content{
+flex:1;
+padding:30px 40px;
 }
 
-.weekly-bar {
-    height: 8px;
-    background: #cfd8ff;
-    border-radius: 10px;
-    margin-top: 6px;
+
+
+/* ================= HEADER ================= */
+
+.page-header h1{
+font-size:28px;
+font-weight:700;
+margin-bottom:5px;
+}
+
+.page-header p{
+color:#666;
+margin-bottom:25px;
+}
+
+
+
+/* ================= FILTER TAB ================= */
+
+.tab-filter{
+
+background:white;
+
+padding:6px;
+
+border-radius:30px;
+
+display:inline-flex;
+
+gap:8px;
+
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+
+margin-bottom:30px;
+
+}
+
+
+.tab{
+
+padding:7px 18px;
+
+border-radius:20px;
+
+font-size:14px;
+
+cursor:pointer;
+
+border:none;
+
+background:none;
+
+transition:0.2s;
+
+}
+
+
+.tab:hover{
+background:#f3f1ff;
+}
+
+
+.tab.active{
+
+background:#ece9ff;
+
+font-weight:500;
+
+}
+
+
+
+/* ================= GRID ================= */
+
+.grid-container{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:40px;
+
+}
+
+
+
+/* ================= SECTION ================= */
+
+.section-title{
+font-weight:600;
+margin-bottom:18px;
+}
+
+
+
+/* ================= REMINDER ITEM ================= */
+
+.reminder-item{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+background:white;
+
+padding:16px 20px;
+
+border-radius:16px;
+
+margin-bottom:12px;
+
+box-shadow:0 6px 16px rgba(0,0,0,0.06);
+
+transition:0.25s;
+
+}
+
+
+.reminder-item:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+.time{
+
+font-weight:600;
+
+color:#7a7a7a;
+
+font-size:13px;
+
+text-align:center;
+
+}
+
+
+.time span{
+
+font-size:11px;
+
+color:#aaa;
+
+}
+
+
+.reminder-info h4{
+
+font-size:15px;
+
+font-weight:600;
+
+margin:0;
+
+}
+
+
+.reminder-info p{
+
+font-size:13px;
+
+color:#777;
+
+margin-top:3px;
+
+}
+
+
+.btn-done{
+
+margin-left:auto;
+
+background:#dcd6ff;
+
+border:none;
+
+padding:6px 14px;
+
+border-radius:20px;
+
+font-size:13px;
+
+cursor:pointer;
+
+transition:0.2s;
+
+}
+
+
+.btn-done:hover{
+
+background:#c6beff;
+
+}
+
+
+
+/* ================= FUTURE CARD ================= */
+
+.future-card{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+background:white;
+
+padding:16px;
+
+border-radius:16px;
+
+margin-bottom:12px;
+
+box-shadow:0 6px 16px rgba(0,0,0,0.06);
+
+}
+
+
+.future-icon{
+
+width:42px;
+
+height:42px;
+
+background:#f1efff;
+
+border-radius:12px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+.future-icon img{
+
+width:32px;
+
+}
+
+
+.future-info b{
+
+font-size:14px;
+
+}
+
+
+.future-info p{
+
+font-size:13px;
+
+color:#666;
+
+margin-top:2px;
+
+}
+
+
+.future-info span{
+
+font-size:12px;
+
+color:#999;
+
+}
+
+
+
+/* ================= TIPS ================= */
+
+.tips-card{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:white;
+
+padding:20px;
+
+border-radius:18px;
+
+margin-top:20px;
+
+box-shadow:0 6px 16px rgba(0,0,0,0.06);
+
+}
+
+
+.tips-text h4{
+
+margin-bottom:6px;
+
+}
+
+
+.tips-text p{
+
+font-size:13px;
+
+color:#666;
+
+max-width:260px;
+
+}
+
+
+.tips-card img{
+
+width:70px;
+
+}
+
+
+
+/* ================= WEEKLY ================= */
+
+.weekly-card{
+
+background:white;
+
+padding:20px;
+
+border-radius:18px;
+
+margin-top:20px;
+
+box-shadow:0 6px 16px rgba(0,0,0,0.06);
+
+}
+
+
+.days{
+
+display:flex;
+
+gap:6px;
+
+margin-top:10px;
+
+margin-bottom:10px;
+
+}
+
+
+.day{
+
+background:#eee;
+
+padding:5px 10px;
+
+border-radius:8px;
+
+font-size:12px;
+
+}
+
+
+.day.active{
+
+background:#ffd7e3;
+
+}
+
+
+.day.blue{
+
+background:#cfe1ff;
+
+}
+
+
+.weekly-bar{
+
+height:8px;
+
+background:#dcd6ff;
+
+border-radius:10px;
+
+margin-top:8px;
+
+}
+
+/* ================= FLOATING BUTTON ================= */
+
+.fab{
+
+position:fixed;
+
+bottom:30px;
+right:40px;
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#8F7CFF,#6B5BFF);
+
+color:white;
+
+font-size:32px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+transition:0.25s;
+
+}
+
+.fab:hover{
+
+transform:scale(1.1);
+
 }

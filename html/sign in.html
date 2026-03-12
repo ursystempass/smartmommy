@@ -1,67 +1,86 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SmartMom Sign In</title>
+<title>SmartMom Sign In</title>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="/css/sing in.css">
+<!-- Feather icon -->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<link rel="stylesheet" href="/smartmom/css/sing in.css">
 </head>
 
-<body class="bg-gray-300 min-h-screen flex items-center justify-center">
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-purple-100">
 
-    <!-- Logo kiri -->
-    <div class="absolute top-8 left-10 flex items-center gap-2">
-        <img src="logo.png" class="w-10">
-        <span class="text-pink-400 font-semibold text-lg">SmartMom</span>
-    </div>
+<!-- Logo -->
+<div class="logo-box">
+    <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png">
+    <span>SmartMom</span>
+</div>
 
-    <!-- Card utama -->
-    <div class="outer-card">
+<!-- Card -->
+<div class="outer-card">
 
-        <img src="logo.png" class="w-14 mx-auto mb-2">
+    <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png" class="logo-center">
 
-        <h1 class="title">Welcome Back</h1>
-        <p class="subtitle">Masuk untuk memantau tumbuh kembang si kecil</p>
+    <h1 class="title">Welcome Back</h1>
+    <p class="subtitle">Masuk untuk memantau tumbuh kembang si kecil</p>
 
-        <div class="inner-card">
+    <div class="inner-card">
 
-            <form>
+        <form id="loginForm">
 
-                <label>Email</label>
-                <input type="email" class="input">
+            <label>Email</label>
+            <input type="email" class="input" placeholder="Masukkan email">
 
-                <label>Password</label>
+            <label>Password</label>
 
-                <div class="relative">
-                    <input type="password" id="password" class="input pr-20">
+            <div class="password-field">
+                <input type="password" id="password" class="input">
 
-                    <span onclick="togglePassword()" class="show-pass">
-                        Tampilkan
-                    </span>
-                </div>
-
-                <button class="btn-daftar">
-                    Masuk
+                <button type="button" onclick="togglePassword()" class="show-pass">
+                    <i data-feather="eye" id="eyeIcon"></i>
                 </button>
+            </div>
 
-                <p class="login-text">
-                    Belum punya akun?
-                    <a href="sign up.html">Daftar Sekarang</a>
-                </p>
+            <button class="btn-login">
+                Masuk
+            </button>
 
-            </form>
+            <p class="login-text">
+                Belum punya akun?
+                <a href="/smartmom/html/sign up.html">Daftar Sekarang</a>
+            </p>
 
-        </div>
+        </form>
+
     </div>
+</div>
 
-    <script src="js/script.js"></script>
+<script>
+feather.replace()
+
+function togglePassword(){
+
+const password = document.getElementById("password");
+const icon = document.getElementById("eyeIcon");
+
+if(password.type === "password"){
+password.type = "text";
+icon.setAttribute("data-feather","eye-off");
+}else{
+password.type = "password";
+icon.setAttribute("data-feather","eye");
+}
+
+feather.replace();
+}
+</script>
 
 </body>
-
 </html>

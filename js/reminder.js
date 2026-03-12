@@ -11,3 +11,20 @@ tabs.forEach(tab => {
     });
 
 });
+const doneButtons = document.querySelectorAll(".btn-done");
+
+doneButtons.forEach(btn => {
+
+btn.addEventListener("click",()=>{
+
+const card = btn.closest(".reminder-item");
+
+card.classList.add("done");
+
+setTimeout(()=>{
+card.style.opacity="0.4";
+},200)
+
+})
+
+})
