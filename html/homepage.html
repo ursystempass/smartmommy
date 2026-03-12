@@ -1,169 +1,245 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMARTMOM</title>
 
-    <title>SmartMom Home</title>
+<link rel="stylesheet" href="/smartmom/css/homepage.css">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/homepage.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gray-200">
+<body>
 
-    <!-- NAVBAR -->
-    <header class="flex justify-between items-center px-10 py-6">
+<!-- NAVBAR -->
+<nav class="navbar">
 
-        <div class="flex items-center gap-2">
-            <img src="img/logo.png" class="w-8">
-            <h1 class="font-bold text-gray-700 tracking-wide">SMARTMOM</h1>
+<div class="logo"> 
+            <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png" alt="Logo smartmom"> 
+            <h3>SmartMom</h3>
         </div>
 
-        <nav class="flex gap-4 text-sm">
-            <a class="nav-btn">Home</a>
-            <a class="nav-btn">Future</a>
-            <a class="nav-btn">About</a>
-            <a class="nav-btn">Contact</a>
-        </nav>
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">Future</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
 
-    </header>
+</nav>
 
 
-    <!-- HERO SECTION -->
-    <section class="grid grid-cols-3 px-10 gap-10">
+<!-- HERO SECTION -->
+<section class="hero">
 
-        <!-- ICON SIDEBAR -->
-        <div class="flex flex-col gap-6 items-center pt-20">
+<div class="hero-image">
+<img src="/smartmom/assets/gambar 1.jpg" alt="mom and baby">
+</div>
 
-            <div class="side-icon"></div>
-            <div class="side-icon"></div>
-            <div class="side-icon"></div>
-            <div class="side-icon"></div>
-            <div class="side-icon"></div>
 
+<!-- REMINDER PANEL -->
+<div class="reminder-panel">
+
+    <div class="reminder-header">
+        <div class="icon">
+            <img src="/smartmom/assets/icon_lonceng-removebg-preview.png" alt="Reminder Icon">
         </div>
 
+        <div class="header-text">
+            <h3>Reminder!</h3>
+            <p>Pantau hal penting untuk perkembangan si kecil</p>
+        </div>
+    </div>
 
-        <!-- IMAGE -->
-        <div>
-            <img src="/assets/gambar 1.jpg" class="hero-img">
+    <div class="progress-section">
+        <div class="progress-title">
+            <span>Progres Reminder</span>
+            <span>2 dari 5 selesai</span>
         </div>
 
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
 
-        <!-- REMINDER CARD -->
-        <div class="reminder-card">
+    <div class="reminder-list">
 
-            <h2 class="reminder-title">Reminder!</h2>
-
-            <p class="text-xs mb-4">Progress Reminder</p>
-
-            <div class="reminder-item">
+        <div class="reminder-item">
+            <div class="dot"></div>
+            <div class="text">
                 Belum isi kalkulator bulan ini
-                <span class="tag orange">Pending</span>
+                <span class="date">Due: 28 January</span>
             </div>
+            <span class="badge pending">Pending</span>
+        </div>
 
-            <div class="reminder-item">
+        <div class="reminder-item">
+            <div class="dot done"></div>
+            <div class="text">
                 Update berat badan bulan ini
-                <span class="tag green">Selesai</span>
             </div>
+            <span class="badge done">Selesai</span>
+        </div>
 
-            <div class="reminder-item">
+        <div class="reminder-item">
+            <div class="dot"></div>
+            <div class="text">
                 Bulan ini fokus stimulasi merangkak
-                <span class="tag purple">Prioritas</span>
             </div>
+            <span class="badge priority">Prioritas</span>
+        </div>
 
-            <div class="reminder-item">
+        <div class="reminder-item">
+            <div class="dot"></div>
+            <div class="text">
                 Cek perkembangan motorik halus
             </div>
-
-            <div class="reminder-item">
-                Baca: MPASI usia 6-8 bulan
-            </div>
-
         </div>
 
-    </section>
-
-
-    <!-- FEATURES -->
-    <section class="grid grid-cols-3 gap-6 px-10 mt-10 pb-10">
-
-        <!-- KALKULATOR -->
-        <div class="feature-card big">
-
-            <h2 class="feature-title">Kalkulator tumbuh kembang</h2>
-
-            <p class="text-sm text-gray-500 mb-4">
-                Pantau berat & tinggi badan si kecil secara otomatis sesuai usia
-            </p>
-
-            <a href="calcullator-input.html">
-                <button class="btn-main">
-                    Mulai hitung sekarang
-                </button>
-            </a>
-
-            <div class="flex gap-6 mt-6 text-sm text-gray-600">
-                <span>Status bulan ini:</span>
-                <span>Usia anak:</span>
+        <div class="reminder-item">
+            <div class="dot"></div>
+            <div class="text">
+                Baca: MPASI usia 6–8 bulan
             </div>
-
         </div>
 
+    </div>
 
-        <!-- CHECKLIST -->
-        <div class="feature-card">
-
-            <h3 class="feature-title-small">Checklist Milestone</h3>
-
-            <ul class="checklist">
-                <li>Sudah duduk tanpa bantuan</li>
-                <li>Sudah merangkak</li>
-                <li>Sudah merespon suara</li>
-                <li>Sudah bisa menggenggam mainan</li>
-            </ul>
-
-            <button class="btn-secondary">
-                3/4 Terselesaikan
-            </button>
-
-        </div>
+</div>
+</section>
 
 
-        <!-- ARTIKEL -->
-        <div class="feature-card">
 
-            <h3 class="feature-title-small">
-                Rekomendasi untuk si kecil
-            </h3>
+<!-- MAIN CARDS -->
+<section class="cards">
 
-            <div class="article">
-                <img src="img/article1.jpg">
-                <div>
-                    <p>5 cara menstimulasi motorik halus bayi</p>
-                </div>
-            </div>
+<!-- CARD 1 -->
+<div class="card kalkulator">
 
-            <div class="article">
-                <img src="img/article2.jpg">
-                <div>
-                    <p>Panduan MPASI untuk pemula</p>
-                </div>
-            </div>
+<div class="kalkulator-top">
 
-            <button class="btn-secondary mt-4">
-                Lihat semua artikel
-            </button>
+<div class="kalkulator-icon">
+<img src="/smartmom/assets/icon kalkulator.png" alt="icon kalkulator">
+</div>
 
-        </div>
+<div class="kalkulator-text">
+<h2>Kalkulator tumbuh kembang</h2>
+<p>Pantau berat & tinggi badan si kecil secara otomatis sesuai usia</p>
 
-    </section>
+<button class="btn-kalkulator">
+Mulai hitung sekarang
+</button>
+</div>
 
-    <script src="/js/homepage.js"></script>
+</div>
+
+
+<div class="kalkulator-info">
+
+<div class="info-item">
+<img src="/smartmom/assets/icon kalender.png" class="info-icon">
+<span>Status bulan ini :</span>
+</div>
+
+<div class="info-item">
+<img src="/smartmom/assets/icon usia anak .png" class="info-icon">
+<span>Usia anak :</span>
+</div>
+
+<div class="info-item">
+<img src="/smartmom/assets/icon update terakhir.png" class="info-icon">
+<span>Update terakhir :</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="card milestone">
+
+<div class="milestone-header">
+
+<img src="/smartmom/assets/icon miletones.png" class="milestone-icon">
+
+<h3>Checklist Milestone</h3>
+
+</div>
+
+
+<div class="milestone-list">
+
+<label class="milestone-item">
+<input type="checkbox">
+<span>Sudah duduk tanpa bantuan</span>
+</label>
+
+<label class="milestone-item">
+<input type="checkbox">
+<span>Sudah merangkak</span>
+</label>
+
+<label class="milestone-item">
+<input type="checkbox">
+<span>Sudah merespon suara</span>
+</label>
+
+<label class="milestone-item">
+<input type="checkbox">
+<span>Sudah bisa menggenggam mainan</span>
+</label>
+
+</div>
+
+
+<div class="milestone-progress">
+3/4 Terselesaikan
+</div>
+
+</div>
+
+
+
+<!-- CARD 3 -->
+<div class="card artikel">
+
+<div class="artikel-header">
+
+<img src="/smartmom/assets/icon artikel.png" class="artikel-icon">
+
+<h3>Rekomendasi untuk si kecil</h3>
+
+</div>
+
+
+<div class="artikel-list">
+
+<div class="artikel-item">
+<img src="/smartmom/assets/gambar2.png" class="artikel-img">
+<p>5 cara menstimulasi motorik halus bayi</p>
+</div>
+
+<div class="artikel-item">
+<img src="/smartmom/assets/gambar3.png" class="artikel-img">
+<p>Panduan MPASI untuk pemula</p>
+</div>
+
+</div>
+
+
+<button class="lihat-artikel">
+Lihat semua artikel →
+</button>
+
+</div>
+
+</section>
+
+
+
+<script src="js/script.js"></script>
 
 </body>
-
 </html>
