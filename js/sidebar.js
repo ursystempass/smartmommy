@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const BASE = "/smartmom/html/";
+
+    /* =========================
+       CEK LOGIN
+    ========================= */
+    const isLogin = localStorage.getItem("login_status");
+
+    if (isLogin !== "true") {
+        window.location.href = BASE + "sign in.html";
+        return;
+    }
+
+    /* =========================
+       ACTIVE MENU
+    ========================= */
     const currentPage = window.location.pathname.split("/").pop();
     const items = document.querySelectorAll(".menu-item");
 
@@ -16,26 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    /* =========================
+       LOGOUT
+    ========================= */
     const logoutBtn = document.querySelector(".logout");
 
     if (logoutBtn) {
         logoutBtn.addEventListener("click", function (e) {
             e.preventDefault();
+
             localStorage.removeItem("login_status");
 
-            window.location.href = "/smartmom/html/sign in.html";
+            window.location.href = BASE + "sign in.html";
         });
-    }
-
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const isLogin = localStorage.getItem("login_status");
-
-    if (isLogin !== "true") {
-        window.location.href = "/smartmom/html/sign in.html";
     }
 
 });
