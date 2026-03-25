@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 
-<link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/signup.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
@@ -80,71 +80,16 @@
 
         </div>
     </div>
-    <script src="/js/sign up.js"></script>
+    <script src="../js/signup.js"></script>
 
-    <script>
-
-        feather.replace()
-
-        function togglePassword() {
-
-            const password = document.getElementById("password");
-            const icon = document.getElementById("eyeIcon");
-
-            if (password.type === "password") {
-                password.type = "text";
-                icon.setAttribute("data-feather", "eye-off");
-            } else {
-                password.type = "password";
-                icon.setAttribute("data-feather", "eye");
-            }
-
-            feather.replace();
-        }
-
-
-        const registerForm = document.getElementById("registerForm");
-
-        registerForm.addEventListener("submit", function (e) {
-
-            e.preventDefault();
-
-            const nama = document.getElementById("nama").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            const user = {
-                nama: nama,
-                email: email,
-                password: password
-            };
-
-            localStorage.setItem("smartmom_user", JSON.stringify(user));
-
-            document
-                .getElementById("popupRegister")
-                .classList
-                .add("active");
-
-        });
-
-
-        function goToLogin() {
-
-            window.location.href = "sign in.html";
-
-        }
-
-    </script>
-
-<div id="successPopup" class="popup-overlay">
-    <div class="popup-box">
-        <div class="icon">✔</div>
-        <h3>Registrasi Berhasil!</h3>
-        <p>Akun kamu sudah dibuat 🎉</p>
-        <button onclick="goToLogin()">Lanjut ke Login</button>
+    <div id="successPopup" class="popup-overlay">
+        <div class="popup-box">
+            <div class="icon">✔</div>
+            <h3>Registrasi Berhasil!</h3>
+            <p>Akun kamu sudah dibuat 🎉</p>
+            <button onclick="goToLogin()">Lanjut ke Login</button>
+        </div>
     </div>
-</div>
 
 </body>
 
