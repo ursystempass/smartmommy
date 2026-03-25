@@ -3,8 +3,6 @@ body {
     margin: 0;
 }
 
-/* LOGO */
-
 .logo-box {
     position: absolute;
     top: 30px;
@@ -25,8 +23,6 @@ body {
     font-size: 17px;
 }
 
-/* CARD */
-
 .outer-card {
     width: 420px;
     background: white;
@@ -42,8 +38,6 @@ body {
     margin-bottom: 8px;
 }
 
-/* TEXT */
-
 .title {
     font-size: 26px;
     font-weight: 600;
@@ -56,8 +50,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* INNER CARD */
-
 .inner-card {
     background: linear-gradient(180deg, #f7f5ff, #f0ecff);
     padding: 28px;
@@ -66,16 +58,12 @@ body {
     text-align: left;
 }
 
-/* LABEL */
-
 label {
     font-size: 13px;
     color: #555;
     margin-top: 12px;
     display: block;
 }
-
-/* INPUT */
 
 .input {
     width: 100%;
@@ -92,8 +80,6 @@ label {
     border: 1px solid #a99cff;
     box-shadow: 0 0 0 3px rgba(170, 150, 255, 0.18);
 }
-
-/* PASSWORD FIELD */
 
 .password-field {
     position: relative;
@@ -117,8 +103,6 @@ label {
     pointer-events: none;
 }
 
-/* BUTTON */
-
 .btn-login {
     width: 100%;
     margin-top: 22px;
@@ -139,8 +123,6 @@ label {
     box-shadow: 0 12px 26px rgba(150, 130, 255, 0.45);
 }
 
-/* LOGIN TEXT */
-
 .login-text {
     text-align: center;
     margin-top: 16px;
@@ -158,10 +140,7 @@ label {
     text-decoration: underline;
 }
 
-/* RESPONSIVE */
-
 @media(max-width:480px) {
-
     .outer-card {
         width: 90%;
         padding: 30px;
@@ -172,6 +151,7 @@ label {
         left: 50%;
         transform: translateX(-50%);
     }
+
 
 }
 
