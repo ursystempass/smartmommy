@@ -1,6 +1,3 @@
-// ==============================
-// FILTER TAB
-// ==============================
 
 const tabs = document.querySelectorAll(".tab");
 
@@ -26,9 +23,7 @@ tabs.forEach(tab => {
 });
 
 
-// ==============================
-// LOAD & RENDER DATA
-// ==============================
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -50,14 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.add("future-card");
         card.setAttribute("data-category", reminder.kategori);
 
-        // kalau sudah selesai
         if (reminder.done) {
             card.style.opacity = "0.5";
         }
 
         card.innerHTML = `
             <div class="future-icon">
-                <img src="/assets/ico pengingat1.png">
+                <img src="../assets/ico pengingat1.png">
             </div>
 
             <div class="future-info">
@@ -78,9 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ==============================
-// HANDLE BUTTON SELESAI
-// ==============================
 
 document.addEventListener("click", function (e) {
 
@@ -94,7 +85,6 @@ document.addEventListener("click", function (e) {
 
         localStorage.setItem("reminders", JSON.stringify(reminders));
 
-        // update UI langsung
         e.target.innerText = "✔ Selesai";
         e.target.style.background = "#b2ffb2";
 
