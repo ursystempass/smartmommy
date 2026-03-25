@@ -17,7 +17,6 @@ body {
   color: #4A3A6E;
 }
 
-/* --- NAVBAR --- */
 nav {
   position: fixed;
   top: 20px;
@@ -87,7 +86,6 @@ nav {
   text-decoration: none;
 }
 
-/* --- ABOUT SECTION --- */
 .about-section {
   padding: 80px 20px;
   display: flex;
@@ -116,7 +114,6 @@ nav {
   margin: 0;
 }
 
-/* --- BUTTONS --- */
 .btn-login {
   background: transparent;
   border: 1px solid #ddd;
@@ -148,7 +145,6 @@ nav {
   transform: scale(1.05);
 }
 
-/* --- HERO SECTION --- */
 .hero {
   width: 100%;
   height: 80vh;
@@ -214,7 +210,6 @@ nav {
   color: #4A3A6E;
 }
 
-/* --- MAIN CONTENT WRAPPER --- */
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -229,7 +224,6 @@ nav {
   font-weight: 600;
 }
 
-/* --- FEATURES --- */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -270,7 +264,6 @@ nav {
   line-height: 1.6;
 }
 
-/* --- WHY CHOOSE US --- */
 .why-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -314,7 +307,6 @@ nav {
   line-height: 1.5;
 }
 
-/* --- FAQ --- */
 .faq-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -371,7 +363,6 @@ nav {
   transition: 0.3s;
 }
 
-/* --- RESPONSIVE (MEDIA QUERIES) --- */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
@@ -397,7 +388,6 @@ nav {
   }
 }
 
-/* ================= CONTACT SECTION ================= */
 
 .contact-section {
   padding: 80px 20px;
@@ -427,7 +417,6 @@ nav {
   align-items: center;
 }
 
-/* INFO */
 
 .contact-info {
   text-align: left;
@@ -439,7 +428,6 @@ nav {
   margin-bottom: 10px;
 }
 
-/* FORM */
 
 .contact-form {
   display: flex;
@@ -477,7 +465,6 @@ nav {
   transform: scale(1.05);
 }
 
-/* RESPONSIVE */
 
 @media (max-width: 768px) {
   .contact-content {
@@ -519,7 +506,6 @@ nav {
   }
 }
 
-/* ================= FOOTER ================= */
 
 .footer {
     margin-top: 60px;
@@ -569,7 +555,6 @@ nav {
     font-size: 18px;
 }
 
-/* BOTTOM */
 .footer-bottom {
     margin-top: 30px;
     padding-top: 15px;
@@ -579,7 +564,6 @@ nav {
     color: #888;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr;
