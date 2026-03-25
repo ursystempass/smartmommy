@@ -4,136 +4,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Data Anak - SmartMom</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/calcullator-input.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
+
+    <link rel="stylesheet" href="/smartmom/css/calcullator-input.css">
+    <link rel="stylesheet" href="/smartmom/css/sidebar.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-gray-200">
-   
+
     <div class="flex">
+
         <aside class="sidebar">
 
             <div class="menu">
 
-                 <nav class="navbar">
-                     <div class="logo">
-                     <img src="/assets/Logo_smartmom-removebg-preview.png">
-                     <h3>SmartMom</h3>
-                 </div>
-                 </nav>
+                <nav class="navbar">
+                    <div class="logo">
+                        <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png">
+                        <h3>SmartMom</h3>
+                    </div>
+                </nav>
 
-                <a href="/html/homepage.html" class="menu-item">
-                    <img src="/assets/icon home.png">
+                <a href="/smartmom/html/homepage.html" class="menu-item">
+                    <img src="/smartmom/assets/icon home.png">
                     <span>Dashboard</span>
                 </a>
 
-                <a href="/html/calcullator-input.html" class="menu-item">
-                    <img src="/assets/icon kalku.png">
+                <a href="/smartmom/html/calcullator-input.html" class="menu-item">
+                    <img src="/smartmom/assets/icon kalku.png">
                     <span>Kalkulator</span>
                 </a>
 
-                <a href="/html/reminder.html" class="menu-item">
-                    <img src="/assets/icon reminderr.png">
+                <a href="/smartmom/html/reminder.html" class="menu-item">
+                    <img src="/smartmom/assets/icon reminderr.png">
                     <span>Reminder</span>
                 </a>
 
-                <a href="/html/timeline.html" class="menu-item">
-                    <img src="/assets/icon artikell.png">
+                <a href="/smartmom/html/timeline.html" class="menu-item">
+                    <img src="/smartmom/assets/icon artikell.png">
                     <span>Timeline</span>
                 </a>
-                <a href="/html/profile.html" class="menu-item">
-                    <img src="/assets/profile icon.png">
+
+                <a href="/smartmom/html/profile.html" class="menu-item">
+                    <img src="/smartmom/assets/profile icon.png">
                     <span>Profile</span>
                 </a>
+
             </div>
 
             <div class="bottom">
                 <a class="menu-item logout">
-                    <img src="/assets/logout.png">
+                    <img src="/smartmom/assets/logout.png">
                     <span>Log Out</span>
                 </a>
             </div>
 
         </aside>
+
         <div class="flex-1 px-10">
 
-<div class="flex-1 page-content">
+            <div class="flex-1 page-content">
 
-    <div class="page-header">
-        <div>
-            <h2>👶 Data Anak</h2>
-            <p class="subtitle">
-                Lengkapi data untuk melihat <b>Growth Score</b>
-            </p>
-        </div>
+                <div class="page-header">
+                    <div>
+                        <h2>👶 Data Anak</h2>
+                        <p class="subtitle">
+                            Lengkapi data untuk melihat <b>Growth Score</b>
+                        </p>
+                    </div>
 
-        <p class="desc">
-            Masukkan data anak dengan benar untuk mendapatkan hasil analisis
-            pertumbuhan yang akurat berdasarkan usia dan pengukuran terbaru.
-        </p>
-    </div>
+                    <p class="desc">
+                        Masukkan data anak dengan benar untuk mendapatkan hasil analisis
+                        pertumbuhan yang akurat berdasarkan usia dan pengukuran terbaru.
+                    </p>
+                </div>
 
-    <div class="form-container">
-        <div class="form-card">
+                <div class="form-container">
 
-            <h3 class="section-title">Informasi Anak</h3>
+                    <div class="form-card">
+                        <h3 class="section-title">Informasi Anak</h3>
 
-            <label>Nama Anak</label>
-            <input type="text" id="namaAnak" class="input">
+                        <label>Nama Anak</label>
+                        <input type="text" id="namaAnak" class="input">
 
-            <label>Tanggal Lahir</label>
-            <input type="date" id="tglLahir" class="input">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" id="tglLahir" class="input">
 
-            <label>Jenis Kelamin</label>
-            <div class="gender-group">
-                <button class="gender girl">Perempuan</button>
-                <button class="gender boy">Laki-laki</button>
+                        <label>Jenis Kelamin</label>
+                        <div class="gender-group">
+                            <button class="gender girl">Perempuan</button>
+                            <button class="gender boy">Laki-laki</button>
+                        </div>
+
+                        <label>Tanggal Pengukuran</label>
+                        <input type="date" id="tglUkur" class="input">
+                    </div>
+
+                    <div class="form-card">
+                        <h3 class="section-title">Data Pengukuran</h3>
+
+                        <label>Berat Badan (kg)</label>
+                        <input type="number" id="berat" class="input">
+
+                        <label>Tinggi Badan (cm)</label>
+                        <input type="number" id="tinggi" class="input">
+
+                        <label>Lingkar Kepala (cm)</label>
+                        <input type="number" id="kepala" class="input">
+                    </div>
+
+                </div>
+
+                <div class="button-area">
+                    <button class="btn-main" id="btnSimpan">
+                        Hitung Pertumbuhan Anak
+                    </button>
+                </div>
+
             </div>
 
-            <label>Tanggal Pengukuran</label>
-            <input type="date" id="tglUkur" class="input">
-
         </div>
 
-        <div class="form-card">
-            <h3 class="section-title">Data Pengukuran</h3>
+    </div>
 
-            <label>Berat Badan (kg)</label>
-            <input type="number" id="berat" class="input">
+    <script src="/smartmom/js/calcullator-input.js"></script>
+    <script src="/smartmom/js/sidebar.js"></script>
 
-            <label>Tinggi Badan (cm)</label>
-            <input type="number" id="tinggi" class="input">
-
-            <label>Lingkar Kepala (cm)</label>
-            <input type="number" id="kepala" class="input">
+    <div id="popup" class="popup-overlay">
+        <div class="popup-box">
+            <h3 id="popupTitle">Peringatan</h3>
+            <p id="popupMessage">Isi data terlebih dahulu.</p>
+            <button id="popupBtn">OK</button>
         </div>
     </div>
 
-    <div class="button-area">
-        <button class="btn-main" id="btnSimpan">
-            Hitung Pertumbuhan Anak
-        </button>
-    </div>
-
-</div>
-    </div>
-
-    <script src="/js/calcullator-input.js"></script>
-    <script src="/js/sidebar.js"></script>
-
-   <div id="popup" class="popup-overlay">
-    <div class="popup-box">
-        <h3 id="popupTitle">Peringatan</h3>
-        <p id="popupMessage">Isi data terlebih dahulu.</p>
-        <button id="popupBtn">OK</button>
-    </div>
-</div>
-</div>
 </body>
-
 </html>
