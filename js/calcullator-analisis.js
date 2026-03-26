@@ -3,13 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadingBox = document.getElementById("loadingBox");
     const resultCard = document.querySelector(".result-card");
 
-    // sembunyikan hasil dulu
     resultCard.style.display = "none";
 
     setTimeout(() => {
         loadAnalisis();
-    }, 1500); // spinner muncul 1.5 detik
-
+    }, 1500);
 
     function loadAnalisis(){
 
@@ -59,13 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("statusTinggi").innerText = statusTinggi;
         document.getElementById("statusKepala").innerText = statusKepala;
 
-        // HITUNG SCORE
         let score = 100;
         if(statusBerat === "Kurang") score -= 30;
         if(statusTinggi === "Kurang") score -= 30;
         if(statusKepala === "Kurang") score -= 40;
 
-        // ANIMASI SCORE
         let current = 0;
         let target = Math.max(score, 0);
         const scoreText = document.getElementById("score");
@@ -79,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
             scoreText.innerText = current;
         }, 20);
 
-        // STATUS UTAMA
         let jumlahKurang = [statusBerat, statusTinggi, statusKepala]
             .filter(s => s === "Kurang").length;
 
@@ -95,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("statusUtama").innerText = statusUtama;
 
-        // INSIGHT
         let insight = "";
 
         if (statusUtama === "Pertumbuhan Optimal") {
@@ -110,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("insightText").innerText = insight;
 
-        // SEMBUNYIKAN SPINNER → TAMPILKAN HASIL
         loadingBox.style.display = "none";
         resultCard.style.display = "flex";
     }

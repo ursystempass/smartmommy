@@ -2,18 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let user = JSON.parse(localStorage.getItem("smartmom_user"));
 
-    // =========================
-    // CEK LOGIN
-    // =========================
     if (!user) {
         alert("Silakan login terlebih dahulu");
-        window.location.href = "sign in.html";
+        window.location.href = "signin.html";
         return;
     }
 
-    // =========================
-    // POPUP
-    // =========================
     const popup = document.getElementById("popup");
     const popupBtn = document.getElementById("popupBtn");
 
@@ -31,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
         popupBtn.addEventListener("click", closePopup);
     }
 
-    // klik luar popup untuk close
     if(popup){
         popup.addEventListener("click", function(e){
             if(e.target === popup){
@@ -40,9 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // =========================
-    // AMBIL ELEMENT
-    // =========================
     const namaInput = document.getElementById("namaAnak");
     const lahirInput = document.getElementById("tglLahir");
     const tglUkurInput = document.getElementById("tglUkur");
@@ -56,9 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let selectedGender = "";
 
-    // =========================
-    // LOAD DATA JIKA ADA
-    // =========================
     if (user.anak) {
         namaInput.value = user.anak.nama;
         lahirInput.value = user.anak.tglLahir;
@@ -68,20 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         selectedGender = user.anak.gender || "";
 
-        // aktifkan tombol gender
         genderButtons.forEach(btn => {
             if(btn.innerText === selectedGender){
                 btn.classList.add("active");
             }
         });
 
-        // auto isi tanggal hari ini
         tglUkurInput.value = new Date().toISOString().split("T")[0];
     }
 
-    // =========================
-    // HITUNG USIA OTOMATIS
-    // =========================
     lahirInput.addEventListener("change", () => {
 
         const lahir = new Date(lahirInput.value);
@@ -96,9 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // =========================
-    // PILIH GENDER
-    // =========================
     genderButtons.forEach(btn => {
         btn.addEventListener("click", () => {
 
@@ -109,9 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // =========================
-    // SIMPAN DATA
-    // =========================
     document.getElementById("btnSimpan").addEventListener("click", function () {
 
         const nama = namaInput.value.trim();
@@ -122,9 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const tinggi = parseFloat(tinggiInput.value);
         const kepala = parseFloat(kepalaInput.value);
 
-        // =========================
-        // VALIDASI
-        // =========================
         if (!nama || !tglLahir || !tglUkur) {
             showPopup("Data Anak Belum Lengkap", "Mohon isi nama anak, tanggal lahir, dan tanggal pengukuran.");
             return;
@@ -145,9 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // =========================
-        // SIMPAN KE USER
-        // =========================
         if (!user.anak) {
             user.anak = {
                 nama: nama,
@@ -166,9 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem("smartmom_user", JSON.stringify(user));
 
-        // =========================
-        // REDIRECT
-        // =========================
         window.location.href = "calcullator-analisis.html";
 
     });

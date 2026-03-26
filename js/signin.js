@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const BASE = "/smartmom/html/";
-
+    const BASE = "../";
     const loginForm = document.getElementById("loginForm");
 
     if (!loginForm) return;

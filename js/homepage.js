@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const BASE = "/smartmom/html/";
-
+    const BASE = "../html/";
     const loginStatus = localStorage.getItem("login_status");
 
     if (loginStatus !== "true") {

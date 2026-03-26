@@ -15,6 +15,6 @@ document.getElementById("simpanReminder").addEventListener("click", () => {
     });
 
     localStorage.setItem("reminders", JSON.stringify(reminders));
-    window.location.href = "/html/reminder.html";
+    window.location.href = "reminder.html";
 
 });

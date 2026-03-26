@@ -1,4 +1,3 @@
-
 const tabs = document.querySelectorAll(".tab");
 
 tabs.forEach(tab => {
@@ -22,12 +21,10 @@ tabs.forEach(tab => {
     });
 });
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById("futureList");
+    if (!container) return;
 
     let reminders = JSON.parse(localStorage.getItem("reminders")) || [];
 
@@ -70,8 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
-
 
 document.addEventListener("click", function (e) {
 

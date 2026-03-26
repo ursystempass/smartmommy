@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const statusText = document.getElementById("statusMilestone");
     const progressBar = document.getElementById("progressBar");
 
-const BASE = "/smartmom/assets/";
-
+    const BASE = "../assets/";
     const milestones = {
         "0-3": [
             { title: "Mengangkat Kepala", img: BASE + "bayi mengangkat kepala.png" },
