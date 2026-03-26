@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const BASE = "../";
     const loginForm = document.getElementById("loginForm");
 
     if (!loginForm) return;
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showPopup("Login berhasil, mengarahkan...", false);
 
             setTimeout(() => {
-                window.location.href = BASE + "homepage.html";
+                window.location.href = "homepage.html";
             }, 1500);
 
         } else {

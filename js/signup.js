@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const BASE = "../html/";
     const form = document.getElementById("registerForm");
-    if (!form) return;
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -11,31 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
 
-        const existingUser = JSON.parse(localStorage.getItem("smartmom_user"));
-
         if (!nama || !email || !password) {
-            showErrorPopup("Isi semua data!");
+            showPopup("Isi semua data!", true);
             return;
         }
 
         if (password.length < 6) {
-            showErrorPopup("Password minimal 6 karakter!");
-            return;
-        }
-
-        if (existingUser && existingUser.email === email) {
-            showErrorPopup("Email sudah dipakai!");
+            showPopup("Password minimal 6 karakter!", true);
             return;
         }
 
         localStorage.setItem("smartmom_user", JSON.stringify({
-            nama,
-            email,
-            password,
-            anak: null
+            nama, email, password
         }));
 
-        showSuccessPopup();
+        showPopup("Registrasi berhasil! Mengarahkan...", false);
     });
 
     if (window.feather) {
@@ -45,44 +33,39 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function showErrorPopup(message) {
-    const popup = document.getElementById("errorPopup");
-    const text = document.getElementById("errorMessage");
+function showPopup(message, isError) {
 
-    if (!popup || !text) return;
-
-    text.textContent = message;
-    popup.classList.add("active");
-
-    setTimeout(() => {
-        popup.classList.remove("active");
-    }, 2000);
-}
-
-
-function closeErrorPopup() {
-    const popup = document.getElementById("errorPopup");
-    if (popup) popup.classList.remove("active");
-}
-
-
-function showSuccessPopup() {
     const popup = document.getElementById("popupRegister");
-    if (!popup) return;
+    const text = document.getElementById("popupText");
+    const title = document.getElementById("popupTitle");
+    const icon = document.getElementById("popupIcon");
+
+    text.innerText = message;
+
+    if (isError) {
+        title.innerText = "Registrasi gagal";
+        icon.style.color = "#ef4444";
+    } else {
+        title.innerText = "Registrasi berhasil";
+        icon.style.color = "#22c55e";
+
+        setTimeout(() => {
+            window.location.href = "signin.html";
+        }, 1500);
+    }
 
     popup.classList.add("active");
+}
 
-    setTimeout(() => {
-        window.location.href = "signin.html";
-    }, 1500);
+
+function goToLogin() {
+    window.location.href = "signin.html";
 }
 
 
 function togglePassword() {
     const password = document.getElementById("password");
     const icon = document.getElementById("eyeIcon");
-
-    if (!password || !icon) return;
 
     if (password.type === "password") {
         password.type = "text";
@@ -95,9 +78,4 @@ function togglePassword() {
     if (window.feather) {
         feather.replace();
     }
-}
-
-
-function goToLogin() {
-    window.location.href = "signin.html";
 }
